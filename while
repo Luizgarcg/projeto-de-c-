@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <windows.h>
+#include <locale.h>
+
+int main() {
+    setlocale(LC_ALL, "Portuguese");
+
+    printf("Bem-vindo a tela de login\n");
+    Sleep(2000); // 2 segundos (milissegundos)
+    system("cls");
+    printf("Por favor informe seu nome de usuario e sua senha\n");
+
+    char nome[50];
+    int senha_correta = 2366;
+    int senha_digi;
+    int chances = 3;
+
+    printf("Digite seu usuario: ");
+    scanf("%s", nome); // Sem o & para strings
+
+    printf("Digite sua senha: ");
+    scanf("%d", &senha_digi);
+
+    while (senha_digi != senha_correta) {
+        chances--; // Reduz uma chance
+
+        if (chances == 0) {
+            printf("Acesso bloqueado!\n");
+            return 0;
+        }
+
+        printf("Senha incorreta! Restam %d chances. Digite novamente: ", chances);
+        scanf("%d", &senha_digi);
+    }
+
+    printf("Senha correta!\n");
+
+    return 0;
+}v
