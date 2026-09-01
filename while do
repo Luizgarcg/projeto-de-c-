@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <windows.h>
+#include <locale.h>
+
+int main() {
+    int opcao;
+do{
+    printf("MENU DE SISTEMA\n");
+    Sleep(5);
+    printf("-1 verificar saldo\n");
+    printf("-2 extrato\n");
+    printf("-3 sair\n");
+    printf("-4 digite uma opcao: ");
+    scanf("%d",&opcao);
+
+    switch(opcao){
+    case 1:
+    printf("seu saldo e de R$ 1.500,00");
+    break;
+
+    case 2:
+    printf("carregando seu extrato");
+    break;
+
+    }
+
+    }
+    while (opcao != 3);
+
+return 0;
+}
